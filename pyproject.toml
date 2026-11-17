@@ -1,0 +1,19 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "fedora-doctor"
+version = "0.1.0"
+description = "Read-only local diagnostics for Fedora Linux"
+requires-python = ">=3.10"
+dependencies = ["PySide6>=6.6", "psutil>=5.9", "platformdirs>=4"]
+
+[project.optional-dependencies]
+dev = ["pytest>=8", "pytest-qt>=4.4"]
+
+[project.scripts]
+fedora-doctor = "app.main:main"
+
+[tool.setuptools.packages.find]
+include = ["app*"]
